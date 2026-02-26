@@ -1,4 +1,5 @@
 plugins {
+    alias(libs.plugins.npmPublish)
     alias(libs.plugins.kotlinMultiplatform)
 }
 
@@ -30,3 +31,35 @@ kotlin {
     }
 }
 
+npmPublish {
+    organization = "awesome-kotlin"
+
+    registries {
+        npmjs {
+            authToken = System.getenv("NPM_TOKEN")
+        }
+    }
+
+    packages {
+        named("js") {
+            version = "0.0.1"
+            packageName = "greetings"
+            readme = file("../README.md")
+
+            packageJson {
+                license = "Apache 2.0"
+                homepage = "https://github.com/Kotlin/kotlin-multiplatform-web-library#readme"
+                description = "Shared Kotlin/JS Greetings library"
+                keywords = listOf("kotlin", "kotlin-js", "greetings", "shared", "api")
+                author {
+                    name = "Kotlin Developer Advocate"
+                    url = "https://github.com/kotlin-hands-on/"
+                }
+                repository {
+                    type = "git"
+                    url = "https://github.com/Kotlin/kotlin-multiplatform-web-library.git"
+                }
+            }
+        }
+    }
+}

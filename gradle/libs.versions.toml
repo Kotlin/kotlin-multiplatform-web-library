@@ -1,6 +1,7 @@
 [versions]
 junit = "4.13.2"
 kotlin = "2.3.0"
+npm-publish = "3.6.0"
 kotlin-wrappers = "2026.2.21"
 
 [libraries]
@@ -10,4 +11,5 @@ junit = { module = "junit:junit", version.ref = "junit" }
 wrappers-browser = { module = "org.jetbrains.kotlin-wrappers:kotlin-browser", version.ref = "kotlin-wrappers" }
 
 [plugins]
+npmPublish = { id = "org.jetbrains.kotlin.npm-publish", version.ref = "npm-publish" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

@@ -1,0 +1,26 @@
+name: Publish
+
+on:
+  release:
+    types: [released, prereleased]
+
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
+jobs:
+  publish:
+    name: Release build and publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 21
+
+      - name: Publish to NPM
+        run: ./gradlew :shared:publishJsPackageToNpmjsRegistry
