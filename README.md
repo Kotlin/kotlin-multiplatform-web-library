@@ -1,6 +1,6 @@
 [![official project](http://jb.gg/badges/official.svg)](https://github.com/JetBrains#jetbrains-on-github)
 
-# Multiplatform library template
+# Multiplatform web library template
 
 ## What is it?
 
