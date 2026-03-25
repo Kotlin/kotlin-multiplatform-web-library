@@ -55,6 +55,18 @@ npmPublish {
                     name = "Kotlin Developer Advocate"
                     url = "https://github.com/kotlin-hands-on/"
                 }
+                contributors = listOf(
+                    Person {
+                        name = "John Smith"
+                        email = "john.smith@example.com"
+                        url = "https://github.com/johnsmith"
+                    },
+                    Person {
+                        name = "Jane Doe"
+                        email = "jane.doe@example.com"
+                        url = "https://github.com/janedoe"
+                    }
+                )
                 repository {
                     type = "git"
                     url = "https://github.com/Kotlin/kotlin-multiplatform-web-library.git"
